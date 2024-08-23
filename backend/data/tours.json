@@ -1,0 +1,470 @@
+[
+  {
+    "startLocation": {
+      "description": "Marrakech, Morocco",
+      "type": "Point",
+      "coordinates": [-8.009889, 31.634013],
+      "address": "Jemaa el-Fna, Marrakech, Morocco"
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 6,
+    "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+    "startDates": [
+      "2023-06-19T09:00:00.000Z",
+      "2023-07-20T09:00:00.000Z",
+      "2023-08-18T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2955",
+    "name": "The Desert Explorer",
+    "duration": 7,
+    "maxGroupSize": 15,
+    "difficulty": "medium",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"],
+    "price": 497,
+    "summary": "Exploring the majestic Moroccan Sahara by foot and by camel",
+    "description": "Experience the vast and breathtaking Moroccan Sahara desert, traverse dunes, and discover the beauty of the Sahara under the stars. This adventure will take you deep into the heart of Morocco's most spectacular landscapes.",
+    "imageCover": "tour-2-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2959",
+        "description": "Merzouga Desert",
+        "type": "Point",
+        "coordinates": [-3.981411, 31.09936],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2958",
+        "description": "Dades Valley",
+        "type": "Point",
+        "coordinates": [-5.904722, 31.506944],
+        "day": 2
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2957",
+        "description": "Todgha Gorge",
+        "type": "Point",
+        "coordinates": [-5.620317, 31.525727],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2956",
+        "description": "Ouarzazate",
+        "type": "Point",
+        "coordinates": [-6.90943, 30.9189],
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Chefchaouen, Morocco",
+      "type": "Point",
+      "coordinates": [-5.268361, 35.168086],
+      "address": "Place Outa El Hammam, Chefchaouen, Morocco"
+    },
+    "ratingsAverage": 5,
+    "ratingsQuantity": 9,
+    "images": ["tour-1-1.jpg", "tour-1-2.jpg", "tour-1-3.jpg"],
+    "startDates": [
+      "2023-04-25T09:00:00.000Z",
+      "2023-07-20T09:00:00.000Z",
+      "2023-10-05T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2951",
+    "name": "The Blue City Wanderer",
+    "duration": 5,
+    "maxGroupSize": 25,
+    "difficulty": "easy",
+    "guides": [
+      "5c8a21d02f8fb814b56fa189",
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a1f292f8fb814b56fa184"
+    ],
+    "price": 397,
+    "summary": "A picturesque hike through the stunning blue streets of Chefchaouen",
+    "description": "Discover the charming blue streets of Chefchaouen, nestled in the Rif Mountains. Enjoy a peaceful hike and soak in the unique blend of Moroccan culture and Mediterranean ambiance.",
+    "imageCover": "tour-1-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2954",
+        "description": "Chefchaouen Medina",
+        "type": "Point",
+        "coordinates": [-5.268361, 35.168086],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2953",
+        "description": "Akchour Waterfalls",
+        "type": "Point",
+        "coordinates": [-5.191314, 35.223742],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2952",
+        "description": "Ras El Maa",
+        "type": "Point",
+        "coordinates": [-5.267828, 35.172608],
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Ifrane, Morocco",
+      "type": "Point",
+      "coordinates": [-5.112113, 33.533665],
+      "address": "Ifrane, Morocco"
+    },
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 6,
+    "images": ["tour-3-1.jpg", "tour-3-2.jpg", "tour-3-3.jpg"],
+    "startDates": [
+      "2023-01-05T10:00:00.000Z",
+      "2023-02-12T10:00:00.000Z",
+      "2024-01-06T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c295a",
+    "name": "The Snow Adventurer",
+    "duration": 4,
+    "maxGroupSize": 10,
+    "difficulty": "difficult",
+    "guides": [
+      "5c8a21d02f8fb814b56fa189",
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a1f4e2f8fb814b56fa185"
+    ],
+    "price": 997,
+    "summary": "An exciting adventure in the snow-covered Atlas Mountains",
+    "description": "Embark on an exhilarating journey through the snowy landscapes of the Atlas Mountains. Perfect for thrill-seekers, this tour offers skiing, snowboarding, and unforgettable mountain views.",
+    "imageCover": "tour-3-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c295c",
+        "description": "Michlifen Ski Resort",
+        "type": "Point",
+        "coordinates": [-5.133267, 33.563713],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c295b",
+        "description": "Dayet Aoua",
+        "type": "Point",
+        "coordinates": [-5.104815, 33.557086],
+        "day": 2
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Casablanca, Morocco",
+      "type": "Point",
+      "coordinates": [-7.617778, 33.589886],
+      "address": "Hassan II Mosque, Casablanca, Morocco"
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 7,
+    "images": ["tour-5-1.jpg", "tour-5-2.jpg", "tour-5-3.jpg"],
+    "startDates": [
+      "2023-08-05T09:00:00.000Z",
+      "2024-03-20T10:00:00.000Z",
+      "2024-08-12T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2961",
+    "name": "The Coastal Explorer",
+    "duration": 10,
+    "maxGroupSize": 15,
+    "difficulty": "medium",
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a201e2f8fb814b56fa186"
+    ],
+    "price": 1497,
+    "summary": "Explore Morocco's stunning Atlantic coastline",
+    "description": "Discover Morocco's beautiful Atlantic coast, from the bustling city of Casablanca to the serene beaches of Essaouira. This tour offers a perfect mix of culture, history, and relaxation.",
+    "imageCover": "tour-5-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2965",
+        "description": "Hassan II Mosque",
+        "type": "Point",
+        "coordinates": [-7.617778, 33.589886],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2964",
+        "description": "Oualidia",
+        "type": "Point",
+        "coordinates": [-9.021528, 32.736855],
+        "day": 4
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2963",
+        "description": "Essaouira",
+        "type": "Point",
+        "coordinates": [-9.766677, 31.512759],
+        "day": 5
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2962",
+        "description": "Agadir",
+        "type": "Point",
+        "coordinates": [-9.597197, 30.427755],
+        "day": 9
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Fes, Morocco",
+      "type": "Point",
+      "coordinates": [-4.983653, 34.033657],
+      "address": "Fes el Bali, Fes, Morocco"
+    },
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 5,
+    "images": ["tour-4-1.jpg", "tour-4-2.jpg", "tour-4-3.jpg"],
+    "startDates": [
+      "2023-03-11T10:00:00.000Z",
+      "2023-05-02T09:00:00.000Z",
+      "2023-06-09T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c295d",
+    "name": "The Imperial Cities Tour",
+    "duration": 9,
+    "maxGroupSize": 20,
+    "difficulty": "easy",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"],
+    "price": 1197,
+    "summary": "Discover the rich history of Morocco's imperial cities",
+    "description": "Explore the ancient medinas, palaces, and gardens of Morocco's four imperial cities: Fes, Marrakech, Rabat, and Meknes. Immerse yourself in the vibrant culture and history of Morocco.",
+    "imageCover": "tour-4-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2960",
+        "description": "Fes",
+        "type": "Point",
+        "coordinates": [-4.983653, 34.033657],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c295f",
+        "description": "Marrakech",
+        "type": "Point",
+        "coordinates": [-8.009889, 31.634013],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c295e",
+        "description": "Rabat",
+        "type": "Point",
+        "coordinates": [-6.849813, 34.020882],
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Taghazout, Morocco",
+      "type": "Point",
+      "coordinates": [-9.708264, 30.544989],
+      "address": "Taghazout, Agadir, Morocco"
+    },
+    "ratingsAverage": 3.9,
+    "ratingsQuantity": 7,
+    "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"],
+    "startDates": [
+      "2023-07-19T09:00:00.000Z",
+      "2023-09-06T09:00:00.000Z",
+      "2024-03-18T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2966",
+    "name": "The Surf & Adventure",
+    "duration": 14,
+    "maxGroupSize": 8,
+    "difficulty": "difficult",
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a1f292f8fb814b56fa184",
+      "5c8a1f4e2f8fb814b56fa185"
+    ],
+    "price": 2997,
+    "summary": "Surfing, hiking, and adventures along Morocco's Atlantic coast",
+    "description": "This tour combines the best of surfing, hiking, and other adrenaline-pumping activities along Morocco's stunning Atlantic coastline. Perfect for adventure seekers looking for a thrilling experience.",
+    "imageCover": "tour-6-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c296b",
+        "description": "Taghazout",
+        "type": "Point",
+        "coordinates": [-9.708264, 30.544989],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296a",
+        "description": "Paradise Valley",
+        "type": "Point",
+        "coordinates": [-9.508197, 30.590463],
+        "day": 4
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2969",
+        "description": "Legzira Beach",
+        "type": "Point",
+        "coordinates": [-9.716503, 29.339395],
+        "day": 6
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2968",
+        "description": "Souss-Massa National Park",
+        "type": "Point",
+        "coordinates": [-9.654929, 29.918532],
+        "day": 7
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2967",
+        "description": "Mogador Island",
+        "type": "Point",
+        "coordinates": [-9.764756, 31.510043],
+        "day": 10
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Ouarzazate, Morocco",
+      "type": "Point",
+      "coordinates": [-6.90943, 30.9189],
+      "address": "Ouarzazate, Morocco"
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 6,
+    "images": ["tour-8-1.jpg", "tour-8-2.jpg", "tour-8-3.jpg"],
+    "startDates": [
+      "2023-03-23T10:00:00.000Z",
+      "2023-10-25T09:00:00.000Z",
+      "2024-01-30T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2970",
+    "name": "The Star Gazer",
+    "duration": 9,
+    "maxGroupSize": 8,
+    "difficulty": "medium",
+    "guides": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"],
+    "price": 2997,
+    "summary": "The most remote and stunningly beautiful places for stargazing",
+    "description": "Discover the best stargazing spots in the Moroccan desert. Witness the Milky Way in all its glory, far from the lights of the city, and experience the serenity of the Sahara under the stars.",
+    "imageCover": "tour-8-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2973",
+        "description": "Ait Ben Haddou",
+        "type": "Point",
+        "coordinates": [-7.130429, 31.047617],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2972",
+        "description": "Draa Valley",
+        "type": "Point",
+        "coordinates": [-6.570677, 30.367423],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2971",
+        "description": "Erg Chebbi",
+        "type": "Point",
+        "coordinates": [-3.977914, 31.146633],
+        "day": 6
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Merzouga, Morocco",
+      "type": "Point",
+      "coordinates": [-4.009252, 31.100128],
+      "address": "Merzouga, Morocco"
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 7,
+    "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
+    "startDates": [
+      "2023-12-16T10:00:00.000Z",
+      "2024-01-16T10:00:00.000Z",
+      "2024-12-12T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2974",
+    "name": "The Desert Nights",
+    "duration": 3,
+    "maxGroupSize": 12,
+    "difficulty": "easy",
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a23412f8fb814b56fa18c"
+    ],
+    "price": 1497,
+    "summary": "Experience the magic of the Moroccan desert at night",
+    "description": "Spend your nights under the starry skies of the Sahara, surrounded by the tranquility of the dunes. Enjoy camel rides, traditional music, and the warmth of Berber hospitality.",
+    "imageCover": "tour-9-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2975",
+        "description": "Merzouga Desert Camp",
+        "type": "Point",
+        "coordinates": [-4.009252, 31.100128],
+        "day": 1
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Oualidia, Morocco",
+      "type": "Point",
+      "coordinates": [-9.021528, 32.736855],
+      "address": "Oualidia, Morocco"
+    },
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 7,
+    "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"],
+    "startDates": [
+      "2023-02-12T10:00:00.000Z",
+      "2023-04-14T09:00:00.000Z",
+      "2023-09-01T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c296c",
+    "name": "The Coastal Retreat",
+    "duration": 5,
+    "maxGroupSize": 8,
+    "difficulty": "easy",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
+    "price": 1997,
+    "summary": "Relax and rejuvenate along Morocco's stunning coastline",
+    "description": "Escape to the tranquil beaches of Oualidia, a hidden gem along Morocco's Atlantic coast. This tour offers the perfect blend of relaxation, scenic views, and local culture.",
+    "imageCover": "tour-7-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c296f",
+        "description": "Oualidia Lagoon",
+        "type": "Point",
+        "coordinates": [-9.021528, 32.736855],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296e",
+        "description": "Essaouira Beach",
+        "type": "Point",
+        "coordinates": [-9.766677, 31.512759],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296d",
+        "description": "Taghazout Beach",
+        "type": "Point",
+        "coordinates": [-9.708264, 30.544989],
+        "day": 5
+      }
+    ]
+  }
+]

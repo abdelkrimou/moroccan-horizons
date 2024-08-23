@@ -1,0 +1,21 @@
+{
+  "name": "moroccan-horizons",
+  "version": "1.0.0",
+  "description": "mern stack of a tour agency in Morocco",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "backend": "npm run dev --prefix backend",
+    "client": "npm run dev --prefix client ",
+    "dev": "concurrently \"npm run backend\" \"npm run client\""
+  },
+  "author": "abdelkrim ouaaddi",
+  "license": "ISC",
+  "dependencies": {
+    "@tanstack/react-query": "^5.51.24",
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-class-properties": "^7.24.7"
+  }
+}
