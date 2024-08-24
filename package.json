@@ -13,8 +13,5 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^8.2.2"
-  },
-  "devDependencies": {
-    "@babel/plugin-transform-class-properties": "^7.24.7"
   }
 }

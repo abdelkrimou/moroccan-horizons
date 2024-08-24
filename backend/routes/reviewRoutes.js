@@ -17,7 +17,7 @@ router
   .route('/')
   .get(getAllReviews)
   // created review should be restricetd only to users
-  .post(restrictTo('user', 'admin'), setTourUserIds, createReview);
+  .post(restrictTo('user'), setTourUserIds, isBooked, createReview);
 router.route('/user/:userId').get(getUserReviews);
 router
   .route('/:id')
