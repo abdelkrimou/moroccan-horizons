@@ -19,7 +19,9 @@ const createSendToken = (user, statusCode, res) => {
     httpOnly: true,
     secure: false,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'None',
+    sameSite: 'none',
+    domain: 'moroccan-horizons.vercel.app',
+    path: '/',
   };
 
   res.cookie('jwt', token, cookieOptions);
@@ -76,7 +78,9 @@ exports.logout = async (req, res) => {
   res.clearCookie('jwt', {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production', // Ensure it's set to true in production
-    sameSite: 'None', // Make sure this matches how the cookie was originally set
+    sameSite: 'none', // Make sure this matches how the cookie was originally set
+    domain: 'moroccan-horizons.vercel.app', // Adjust this to match your domain
+    path: '/',
   });
   res.status(200).json({
     status: 'success',
