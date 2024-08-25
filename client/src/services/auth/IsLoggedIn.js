@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const useAuth = () => {
@@ -8,14 +8,14 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const pathName = location.pathname;
-
   useEffect(() => {
-    const checkAuth = useCallback(async () => {
+    const checkAuth = async () => {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/users/me`,
           {
             withCredentials: true,
+            Credential: "include",
           }
         );
         // console.log(response);
@@ -30,7 +30,7 @@ export const useAuth = () => {
       } finally {
         setLoading(false);
       }
-    });
+    };
     checkAuth();
   }, [pathName]);
 
