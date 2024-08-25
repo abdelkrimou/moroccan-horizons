@@ -19,7 +19,7 @@ const app = express();
 // Allow requests from front end
 app.use(
   cors({
-    origin: 'http://127.0.0.1:5173', // Replace with your frontend's URL
+    origin: 'https://moroccan-horizons-966q.vercel.app', // Replace with your frontend's URL
     credentials: true, // If you need to send cookies or auth headers
   })
 );
@@ -71,7 +71,7 @@ app.use(cookieParser());
 app.use(express.json({ limit: '10kb' }));
 
 // Serving Static file
-app.use('/img', express.static(path.join(__dirname, 'public/img')));
+// app.use('/img', express.static(path.join(__dirname, 'public/img')));
 
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
