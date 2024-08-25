@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: 'https://moroccan-horizons-966q.vercel.app', // Replace with your frontend's URL
     credentials: true, // If you need to send cookies or auth headers
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
