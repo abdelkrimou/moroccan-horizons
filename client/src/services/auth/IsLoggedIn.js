@@ -23,6 +23,7 @@ export const useAuth = () => {
         setIsAuthenticated(true);
         // return response.data.data.doc;
       } catch (err) {
+        console.log(err);
         setIsAuthenticated(false);
         setUser(null);
       } finally {

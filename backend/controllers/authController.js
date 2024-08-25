@@ -18,9 +18,10 @@ const createSendToken = (user, statusCode, res) => {
     expiresIn: process.env.JWT_COOKIE_EXPIRESIN * 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: false,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'None',
   };
 
-  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
   res.cookie('jwt', token, cookieOptions);
   //REMOVE THE PASSWORD FROM THE DATA
   user.password = undefined;
