@@ -64,6 +64,7 @@ function UpdateProfile() {
       toast.success("You have updated your data successfully !");
     } catch (error) {
       setUser(originalUser);
+      console.log(error);
       toast.error(
         error?.response?.data?.message || "Failed to update profile !"
       );

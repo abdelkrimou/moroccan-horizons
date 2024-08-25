@@ -20,10 +20,10 @@ function UpdatePassword() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       await updateProfilePassword(updatedPass);
       reset();
-      // window.location.reload(true);
       toast.success("You have updated your password successfully !");
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.log(error);
+      toast.error(error?.response?.data?.message);
     }
   };
   return (

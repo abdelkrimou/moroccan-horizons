@@ -13,7 +13,7 @@ export function useUpdateUser() {
       toast.success("You have updated the user Successfully");
     },
     onError: () => {
-      console.log("fail deleting");
+      console.log("fail Updating ");
       toast.error("There was an issue with updating the user's Data");
     },
   });
