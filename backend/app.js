@@ -73,13 +73,13 @@ app.use(express.json({ limit: '10kb' }));
 // Serving Static file
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
-  });
-}
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+//   });
+// }
 // Test middleware
 app.use((req, res, next) => {
   next();
