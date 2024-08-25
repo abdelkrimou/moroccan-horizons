@@ -39,7 +39,7 @@ function MapComponent({ coordinates }) {
       ref={mapRef}
       style={{ width: "100%", height: "400px" }}
       mapStyle="mapbox://styles/karimou97/clznou5vx006401pze73mgkfh"
-      mapboxAccessToken="pk.eyJ1Ijoia2FyaW1vdTk3IiwiYSI6ImNsenh1eDJvbzBzOWwybXNibG40cXVkcHMifQ.NYZqxcz3jFymneDLZYJXmg"
+      mapboxAccessToken={`${import.meta.env.VITE_MAPBOX_TOKEN}`}
       onMove={(evt) => setViewport(evt.viewState)}
       scrollZoom={false}
       onLoad={handleMapLoad} // Ensure map is loaded before fitting bounds

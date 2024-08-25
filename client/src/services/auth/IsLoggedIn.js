@@ -21,7 +21,7 @@ export const useAuth = () => {
     const checkAuth = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/v1/users/me",
+          `${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/users/me`,
           {
             withCredentials: true,
             Credential: "include",

@@ -3,7 +3,9 @@ import axios from "axios";
 export async function getMyReviews({ userId }) {
   const response = await axios({
     method: "GET",
-    url: `http://127.0.0.1:8000/api/v1/reviews/user/${userId}`,
+    url: `${
+      import.meta.env.VITE_BACKEND_BASEURL
+    }/api/v1/reviews/user/${userId}`,
     withCredentials: true, // Ensure cookies are sent and received
   });
   return response.data.data.userReviews;

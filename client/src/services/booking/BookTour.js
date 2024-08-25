@@ -8,7 +8,9 @@ export const bookTour = async (tourId, quantity) => {
     // 1) Get checkout session from API
     const session = await axios({
       method: "GET",
-      url: `http://127.0.0.1:8000/api/v1/bookings/checkout-session/${tourId}/${quantity}`,
+      url: `${
+        import.meta.env.VITE_BACKEND_BASEURL
+      }/api/v1/bookings/checkout-session/${tourId}/${quantity}`,
       withCredentials: true, // Ensure cookies are sent and received
     });
     // 2) Create checkout form + charge credit card
