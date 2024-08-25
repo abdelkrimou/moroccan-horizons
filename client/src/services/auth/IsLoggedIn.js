@@ -2,15 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-// export const getCurrentUser = async () => {
-//   const response = await axios.get("http://127.0.0.1:8000/api/v1/users/me", {
-//     withCredentials: true,
-//     Credential: "include",
-//   });
-//   console.log(response);
-//   return response.data.data.doc;
-// };
-
 export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);

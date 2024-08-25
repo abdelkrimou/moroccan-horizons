@@ -5,7 +5,7 @@ import HeadingHome from "../common/HeadingHome";
 import PrimaryBtn from "../ui/PrimaryBtn";
 import SecondaryBtn from "../ui/SecondaryBtn";
 import { useAuth } from "../../services/auth/IsLoggedIn";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PiSignOutLight } from "react-icons/pi";
 import { logout } from "../../services/auth/AuthLogout";
 import toast from "react-hot-toast";
@@ -16,7 +16,6 @@ function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const { loading, user } = useAuth();
-  useEffect(() => {}, [user]);
 
   async function handleLogout() {
     try {
