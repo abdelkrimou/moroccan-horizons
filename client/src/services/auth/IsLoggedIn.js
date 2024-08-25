@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const useAuth = () => {
@@ -8,14 +8,14 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const pathName = location.pathname;
+
   useEffect(() => {
-    const checkAuth = async () => {
+    const checkAuth = useCallback(async () => {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_BACKEND_BASEURL}/api/v1/users/me`,
           {
             withCredentials: true,
-            Credential: "include",
           }
         );
         // console.log(response);
@@ -23,13 +23,14 @@ export const useAuth = () => {
         setIsAuthenticated(true);
         // return response.data.data.doc;
       } catch (err) {
-        console.log(err);
+        console.error("Authentication check failed:", err);
+
         setIsAuthenticated(false);
         setUser(null);
       } finally {
         setLoading(false);
       }
-    };
+    });
     checkAuth();
   }, [pathName]);
 
