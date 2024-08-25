@@ -104,9 +104,13 @@ app.use('/api/v1/reviews', reviewRouter);
 
 // handle undefind routes
 
-app.all('*', (req, res, next) => {
-  next(new AppError(`This url : ${req.originalUrl} is not Found`, 404));
+app.get('/', (req, res) => {
+  res.send('Welcome to the API');
 });
+
+// app.all('*', (req, res, next) => {
+//   next(new AppError(`This url : ${req.originalUrl} is not Found`, 404));
+// });
 
 app.use(globalErrorHandler);
 
