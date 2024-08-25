@@ -69,6 +69,10 @@ const limiter = rateLimit({
 // Body Parser ,reading data from body
 app.use(cookieParser());
 app.use(express.json({ limit: '10kb' }));
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store');
+  next();
+});
 
 // Serving Static file
 // app.use('/img', express.static(path.join(__dirname, 'public/img')));

@@ -73,7 +73,11 @@ exports.login = catchAsync(async (req, res, next) => {
   // });
 });
 exports.logout = async (req, res) => {
-  res.clearCookie('jwt');
+  res.clearCookie('jwt', {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production', // Ensure it's set to true in production
+    sameSite: 'None', // Make sure this matches how the cookie was originally set
+  });
   res.status(200).json({
     status: 'success',
   });
