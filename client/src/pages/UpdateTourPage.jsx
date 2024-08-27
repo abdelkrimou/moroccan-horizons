@@ -8,7 +8,7 @@ import SecondaryBtn from "../components/ui/SecondaryBtn";
 import { useNavigate } from "react-router-dom";
 import LoadingPage from "../components/common/LoadingPage";
 import toast from "react-hot-toast";
-import { useUpdateTour } from "../hooks/useUpdateTour";
+// import { useUpdateTour } from "../hooks/useUpdateTour";
 import ErrorPage from "../components/ui/ErrorPage";
 
 function UpdateTourPage() {
@@ -16,16 +16,16 @@ function UpdateTourPage() {
 
   const [tour, setTour] = useState({});
   // Update the tour hook
-  const [
-    //updateTour
-    isUpdating,
-  ] = useUpdateTour();
+  // const [
+  //   updateTour
+  //   isUpdating,
+  // ] = useUpdateTour();
 
   // Get tourId from the URL
   const { tourId } = useParams();
   // Fetch tour
   const { isLoading, error, data } = useQuery({
-    queryKey: ["tour"],
+    queryKey: ["tour", tourId],
     queryFn: () => getTour(tourId),
   });
   // Use form to handle changes
@@ -39,7 +39,7 @@ function UpdateTourPage() {
   // handle Changes Function
   function onSubmit(data) {
     // const updateTour = data;
-    // This is the function that will update the tour but it's commented so noone could update a tour and mess with data
+    // This is the function that will update the tour but it's commented so no-one could update a tour and mess with data
     //updateTour({tourId,updatedData})
     toast.error("You don't have the authority to update a tour");
     console.log(data);
@@ -210,11 +210,14 @@ function UpdateTourPage() {
 
           {/* Submit Button */}
           <div className="flex gap-3 justify-end">
-            <SecondaryBtn onClick={() => navigate("/admin/manage-tours")}>
+            <SecondaryBtn
+              disabled={isSubmitting}
+              onClick={() => navigate("/admin/manage-tours")}
+            >
               Cancel
             </SecondaryBtn>
-            <PrimaryBtn type="submit">
-              {isSubmitting || isUpdating ? "Submitting..." : "Save Changes"}
+            <PrimaryBtn disabled={isSubmitting} type="submit">
+              {isSubmitting ? "Submitting..." : "Save Changes"}
             </PrimaryBtn>
           </div>
         </form>

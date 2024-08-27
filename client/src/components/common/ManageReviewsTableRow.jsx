@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { useDeleteMyReview } from "../../hooks/useDeleteMyReview";
+import LoadingSpinner from "./LoadingSpinner";
 function ManageReviewsTableRow({ review, isLast }) {
   const [showConfirmDel, setShowConfirmDel] = useState(false);
   const reviewId = review?._id;
@@ -46,10 +47,11 @@ function ManageReviewsTableRow({ review, isLast }) {
       >
         {!showConfirmDel ? (
           <div
+            disabled={isDeleting}
             onClick={() => setShowConfirmDel(true)}
             className="bg-red-400 relative text-white h-[40px] cursor-pointer hover:bg-red-500 px-2 text-sm rounded-lg group transition-all duration-200 ease-in-out"
           >
-            <MdDelete className="text-lg mt-[10px]" />{" "}
+            <MdDelete className="text-lg mt-[10px]" />
           </div>
         ) : (
           <button
@@ -58,7 +60,7 @@ function ManageReviewsTableRow({ review, isLast }) {
             onMouseLeave={() => setShowConfirmDel(false)}
             onClick={deleteReview}
           >
-            delete
+            {isDeleting ? <LoadingSpinner /> : "delete"}
           </button>
         )}
         <span

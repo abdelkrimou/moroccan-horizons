@@ -6,14 +6,15 @@ import { RxCross2 } from "react-icons/rx";
 import { useState } from "react";
 import { useDeleteUser } from "../../hooks/useDeleteUser";
 import { useUpdateUser } from "../../hooks/useUpdateUser";
+import LoadingSpinner from "./LoadingSpinner";
 function ManageUsersTableRow({ isLast, user }) {
   const [showConfirmDel, setShowConfirmDel] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
   const [userRole, setUserRole] = useState(user?.role);
-  const [updateUser, isUpdating] = useUpdateUser();
+
   // const [showUpdate, setShowUpdate] = useState(false);
   const userId = user._id;
-
+  const [updateUser, isUpdating] = useUpdateUser();
   const [deleteUser, isDeleting] = useDeleteUser();
   async function handleDeletUser() {
     deleteUser(userId);
@@ -51,7 +52,6 @@ function ManageUsersTableRow({ isLast, user }) {
             value={userRole}
             className="bg-accentYellow/50 focus:ring-[1px] focus:outline-none ring-accentGreen capitalize border-mainGreen border-[0.25px] rounded-lg p-2"
           >
-            <option value="all-roles">All roles </option>
             <option value="user">user</option>
             <option value="admin">admin</option>
             <option value="guide">guide</option>
@@ -103,7 +103,7 @@ function ManageUsersTableRow({ isLast, user }) {
               // className=" mt-[10px] text-[10px] uppercase"
               onClick={handleUpdateRole}
             >
-              Save
+              {isUpdating ? <LoadingSpinner /> : "Save"}
             </button>
             <button
               onClick={() => setShowUpdate(false)}

@@ -8,9 +8,8 @@ export function useUpdateUser() {
     mutationFn: ({ userId, updatedData }) =>
       updateUserAPI({ userId, updatedData }),
     onSuccess: async () => {
-      await queryClient.refetchQueries(["user"]);
-
       toast.success("You have updated the user Successfully");
+      await queryClient.refetchQueries(["user"]);
     },
     onError: () => {
       console.log("fail Updating ");

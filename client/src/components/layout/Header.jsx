@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../ui/Logo";
 import Container from "./Container";
 import HeadingHome from "../common/HeadingHome";
@@ -13,8 +13,7 @@ import LoadingSpinner from "../common/LoadingSpinner";
 
 function Header() {
   const [isLogoutLoad, setIsLogoutLoad] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+
   const { loading, user } = useAuth();
 
   async function handleLogout() {
@@ -22,7 +21,7 @@ function Header() {
       setIsLogoutLoad(true);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       await logout();
-      location.pathname === "/" ? window.location.reload(true) : navigate("/");
+      window.location.href = "/";
     } catch (err) {
       toast.error(err.message);
     } finally {

@@ -29,7 +29,7 @@ function ManageBookings() {
         bookings.sort((a, b) => {
           const dateA = new Date(a.createdAt);
           const dateB = new Date(b.createdAt);
-          return dateA - dateB;
+          return dateB - dateA;
         })
       );
     } else if (e.target.value === "latest") {
@@ -37,7 +37,7 @@ function ManageBookings() {
         bookings.sort((a, b) => {
           const dateA = new Date(a.createdAt);
           const dateB = new Date(b.createdAt);
-          return dateB - dateA;
+          return dateA - dateB;
         })
       );
     }

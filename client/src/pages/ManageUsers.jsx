@@ -55,6 +55,7 @@ function ManageUsers() {
     );
   }
   useEffect(() => {
+    setSearchQuery("");
     setUsers(data);
   }, [data]);
   if (isLoading) return <LoadingPage />;

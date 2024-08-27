@@ -8,13 +8,15 @@ export function useDeleteUser() {
     mutationFn: (userId) => deleteUserAPI(userId),
     onSuccess: async () => {
       console.log("success deleting");
-      await queryClient.refetchQueries(["users"]);
       toast.success("You have deleted the user Successfully");
+      await queryClient.refetchQueries(["users"]);
     },
     onError: (err) => {
       console.log(err);
       console.log("fail deleting");
-      toast.error("There was an issue with deleting the user");
+      toast.error(
+        "There was an issue with deleting the user ! try again later"
+      );
     },
   });
   return [deleteUser, isDeleting];

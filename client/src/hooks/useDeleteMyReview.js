@@ -8,8 +8,7 @@ export function useDeleteMyReview() {
     mutationFn: (reviewId) => deleteMyReviewAPI(reviewId),
     onSuccess: async () => {
       console.log("success deleting");
-      await queryClient.refetchQueries(["user-review"]);
-
+      queryClient.refetchQueries(["user-review"]);
       toast.success("You have deleted the review Successfully");
     },
     onError: () => {

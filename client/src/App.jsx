@@ -23,6 +23,7 @@ import UserSettings from "./pages/UserSettings";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import CreateTourPage from "./pages/CreateTourPage";
 import UpdateTourPage from "./pages/UpdateTourPage";
+import SuccessfullBooking from "./pages/SuccessfullBooking";
 import Protect from "./components/Auth/Protect";
 import RestrictTo from "./components/Auth/RestrictTo";
 
@@ -42,7 +43,10 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/about-us" element={<Aboutus />} />
-              <Route path="/successfull-payment" element={<Aboutus />} />
+              <Route
+                path="/successfull-payment"
+                element={<SuccessfullBooking />}
+              />
               <Route
                 path="/tours/create-new"
                 element={

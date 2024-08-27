@@ -3,14 +3,14 @@ import SecondaryBtn from "../components/ui/SecondaryBtn";
 import PrimaryBtn from "../components/ui/PrimaryBtn";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useCreateTour } from "../hooks/useCreateTour";
+// import { useCreateTour } from "../hooks/useCreateTour";
 function CreateTourPage() {
   const navigate = useNavigate();
   // create tour hook
-  const [
-    //createTour,
-    isCreating,
-  ] = useCreateTour();
+  // const [
+  //   createTour,
+  //   isCreating,
+  // ] = useCreateTour();
   // useForm hook (library)
   const {
     register,
@@ -24,6 +24,7 @@ function CreateTourPage() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       //createTour(data); I commented this function so people could not miss with the data
       toast.error("You don't have the authority to create a new tour");
+      console.log(data);
       reset();
     } catch (error) {
       console.error("Failed to submit:", error);
@@ -331,11 +332,14 @@ function CreateTourPage() {
 
           {/* Submit Button */}
           <div className="flex gap-3 mt-5 justify-end">
-            <SecondaryBtn onClick={() => navigate("/admin/manage-tours")}>
+            <SecondaryBtn
+              disabled={isSubmitting}
+              onClick={() => navigate("/admin/manage-tours")}
+            >
               Cancel
             </SecondaryBtn>
-            <PrimaryBtn type="submit">
-              {isSubmitting || isCreating ? "Creating ..." : "Save Tour"}
+            <PrimaryBtn disabled={isSubmitting} type="submit">
+              {isSubmitting ? "Creating ..." : "Save Tour"}
             </PrimaryBtn>
           </div>
         </form>
