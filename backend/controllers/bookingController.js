@@ -26,7 +26,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     mode: 'payment',
-    success_url: `https://moroccan-horizons-966q.vercel.app/user/bookings`,
+    success_url: `https://moroccan-horizons-966q.vercel.app/successfull-payment`,
     cancel_url: `https://moroccan-horizons-966q.vercel.app`,
     customer_email: req.user.email,
     client_reference_id: req.params.tourId,

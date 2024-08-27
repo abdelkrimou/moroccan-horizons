@@ -28,7 +28,7 @@ function AddReviewModal({ tour }) {
       toast.success("You have successfully added your review !");
       await queryClient.refetchQueries(["user-review"]);
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error("You have already created a review on this tour !!");
     }
   };
   return (
@@ -110,10 +110,13 @@ function AddReviewModal({ tour }) {
             </span>
           )}
           <div className=" self-end mt-9 flex gap-3">
-            <SecondaryBtn onClick={() => setIsAddReviewModalOpen(false)}>
+            <SecondaryBtn
+              disabled={isSubmitting}
+              onClick={() => setIsAddReviewModalOpen(false)}
+            >
               Cancel
             </SecondaryBtn>
-            <PrimaryBtn type="submit">
+            <PrimaryBtn disabled={isSubmitting} type="submit">
               {isSubmitting ? (
                 <span className="flex gap-2">
                   Adding ... <LoadingSpinner />

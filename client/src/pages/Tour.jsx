@@ -20,17 +20,18 @@ import LoadingPage from "../components/common/LoadingPage";
 import { useAuth } from "../services/auth/IsLoggedIn";
 import ErrorPage from "../components/ui/ErrorPage";
 function Tour() {
+  const nameSlug = params.nameSlug;
+
   const {
     isLoading,
     error,
     data: tour,
   } = useQuery({
-    queryKey: ["Tour"],
+    queryKey: ["Tour", nameSlug],
     queryFn: () => fetchTour(nameSlug),
   });
   const params = useParams();
   const { user, isAuthenticated } = useAuth();
-  const nameSlug = params.nameSlug;
   const {
     isBookingModalOpen,
     setIsBookingModalOpen,

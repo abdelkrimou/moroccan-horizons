@@ -42,6 +42,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/about-us" element={<Aboutus />} />
+              <Route path="/successfull-payment" element={<Aboutus />} />
               <Route
                 path="/tours/create-new"
                 element={

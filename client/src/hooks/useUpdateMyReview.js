@@ -7,10 +7,9 @@ export function useUpdateMyReview() {
   const { mutate: updateMyReview, isPending: isUpdating } = useMutation({
     mutationFn: ({ reviewId, updatedData }) =>
       updateMyReviewAPI({ reviewId, updatedData }),
-    onSuccess: async () => {
-      await queryClient.refetchQueries(["user-review"]);
-
+    onSuccess: () => {
       toast.success("You have updated your review Successfully");
+      queryClient.refetchQueries(["user-review"]);
     },
     onError: () => {
       console.log("fail deleting");

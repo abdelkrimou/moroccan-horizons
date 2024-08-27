@@ -1,13 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
-  const pathName = location.pathname;
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -32,7 +29,7 @@ export const useAuth = () => {
       }
     };
     checkAuth();
-  }, [pathName]);
+  }, []);
 
   return { isAuthenticated, user, setUser, loading };
 };
