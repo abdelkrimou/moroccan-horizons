@@ -7,7 +7,7 @@ function SuccessfullBooking() {
       <p className="text-accentGreen text-lg">
         Thank you for your purchase! Your booking has been confirmed.
       </p>
-      <Link to="user/bookings" className="animate-pulse hover:animate-none ">
+      <Link to="/user/bookings" className="animate-pulse hover:animate-none ">
         Go to My Bookings
       </Link>
     </main>
