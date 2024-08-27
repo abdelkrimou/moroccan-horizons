@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReviewTable from "../components/layout/ReviewTable";
 import { useQuery } from "@tanstack/react-query";
 import { getMyReviews } from "../services/reviews/HandleMyReviews";
@@ -7,16 +7,17 @@ import LoadingPage from "../components/common/LoadingPage";
 import ErrorPage from "../components/ui/ErrorPage";
 
 function MyReviews() {
-  const [reviews, setReviews] = useState([]);
   const { user } = useAuth();
   const userId = user?._id;
-  const { isLoading, data, error } = useQuery({
+  const {
+    isLoading,
+    data: reviews,
+    error,
+  } = useQuery({
     queryKey: ["user-review"],
     queryFn: () => getMyReviews({ userId }),
   });
-  useEffect(() => {
-    setReviews(data);
-  }, [data]);
+
   if (isLoading) {
     return <LoadingPage />;
   }
@@ -31,7 +32,7 @@ function MyReviews() {
         </div>
       ) : (
         <div className="text-xl font-textFont mt-20 text-mainGreen text-center ">
-          Oops ! You haven't created any reviews yet
+          Oops ! You have not created any reviews yet
         </div>
       )}
     </>

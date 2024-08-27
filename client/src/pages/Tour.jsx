@@ -20,16 +20,6 @@ import LoadingPage from "../components/common/LoadingPage";
 import { useAuth } from "../services/auth/IsLoggedIn";
 import ErrorPage from "../components/ui/ErrorPage";
 function Tour() {
-  const params = useParams();
-  const { user, isAuthenticated } = useAuth();
-
-  const nameSlug = params.nameSlug;
-  const {
-    isBookingModalOpen,
-    setIsBookingModalOpen,
-    setIsAddReviewModalOpen,
-    isAddReviewModalOpen,
-  } = UseModalsContext();
   const {
     isLoading,
     error,
@@ -38,7 +28,17 @@ function Tour() {
     queryKey: ["Tour"],
     queryFn: () => fetchTour(nameSlug),
   });
-  const coordinates = tour?.locations?.map((location, i) => ({
+  const params = useParams();
+  const { user, isAuthenticated } = useAuth();
+  const nameSlug = params.nameSlug;
+  const {
+    isBookingModalOpen,
+    setIsBookingModalOpen,
+    setIsAddReviewModalOpen,
+    isAddReviewModalOpen,
+  } = UseModalsContext();
+
+  const coordinates = tour?.locations?.map((location) => ({
     longitude: location.coordinates[0],
     latitude: location.coordinates[1],
   }));

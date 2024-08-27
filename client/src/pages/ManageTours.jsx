@@ -2,20 +2,18 @@ import { useQuery } from "@tanstack/react-query";
 import ManageToursTable from "../components/layout/ManageToursTable";
 import LoadingPage from "../components/common/LoadingPage";
 import { fetchTours } from "../services/tours/FetchTours";
-import { useEffect } from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import ErrorPage from "../components/ui/ErrorPage";
 
 function ManageTours() {
-  const [tours, setTours] = useState([]);
-  const { isLoading, error, data } = useQuery({
+  const {
+    isLoading,
+    error,
+    data: tours,
+  } = useQuery({
     queryKey: ["tours"],
     queryFn: fetchTours,
   });
-  useEffect(() => {
-    setTours(data);
-  }, [data]);
 
   if (isLoading) return <LoadingPage />;
   if (error) return <ErrorPage />;

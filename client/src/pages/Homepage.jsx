@@ -4,17 +4,17 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchTours } from "../services/tours/FetchTours";
 import LoadingPage from "../components/common/LoadingPage";
 import ErrorPage from "../components/ui/ErrorPage";
-import { useEffect, useState } from "react";
 
 function Homepage() {
-  const [tours, setTours] = useState();
-  const { isLoading, error, data } = useQuery({
+  const {
+    isLoading,
+    error,
+    data: tours,
+  } = useQuery({
     queryKey: ["tours"],
     queryFn: fetchTours,
   });
-  useEffect(() => {
-    setTours(data);
-  }, [data]);
+
   if (isLoading) return <LoadingPage />;
   if (error) return <ErrorPage />;
 
