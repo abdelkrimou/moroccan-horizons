@@ -1,13 +1,12 @@
 import { useForm } from "react-hook-form";
 import PrimaryBtn from "../components/ui/PrimaryBtn";
 import validator from "validator";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Container from "../components/layout/Container";
 import { login } from "../services/auth/AuthLogin";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../components/common/LoadingSpinner";
 function Login() {
-  const navigate = useNavigate();
   const location = useLocation();
   const {
     register,
@@ -22,7 +21,7 @@ function Login() {
       toast.success("You have logged in Successfully !");
       reset();
       const from = location?.state?.from?.pathname || "/";
-      navigate(from, { replace: true });
+      window.location.href = from;
     } catch (err) {
       toast.error(err.response.data.message);
       console.log(err);
