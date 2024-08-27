@@ -1,13 +1,14 @@
 import { useForm } from "react-hook-form";
 import PrimaryBtn from "../components/ui/PrimaryBtn";
 import validator from "validator";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Container from "../components/layout/Container";
 import { login } from "../services/auth/AuthLogin";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../components/common/LoadingSpinner";
 function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -20,7 +21,8 @@ function Login() {
       await login(data);
       toast.success("You have logged in Successfully !");
       reset();
-      navigate("/");
+      const from = location?.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
     } catch (err) {
       toast.error(err.response.data.message);
       console.log(err);
