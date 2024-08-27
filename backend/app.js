@@ -7,12 +7,14 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 // Routes
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
+const { webhook } = require('./controllers/bookingController');
 
 const app = express();
 
@@ -57,6 +59,8 @@ app.use(
   })
 );
 
+// Webhook Route Stripe
+app.post('/webhook', bodyParser.raw({ type: 'application/json' }), webhook);
 // Devlopement logging
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -67,7 +71,7 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP , Please try again in one hour !',
 });
 
-// app.use("/api", limiter);
+app.use('/api', limiter);
 // Body Parser ,reading data from body
 app.use(cookieParser());
 app.use(express.json({ limit: '10kb' }));
