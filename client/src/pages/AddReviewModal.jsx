@@ -7,7 +7,9 @@ import toast from "react-hot-toast";
 import { UseModalsContext } from "../Context/ModalsContext";
 import LoadingSpinner from "../components/common/LoadingSpinner";
 import { addReview } from "../services/reviews/AddReview";
+import { useQueryClient } from "@tanstack/react-query";
 function AddReviewModal({ tour }) {
+  const queryClient = useQueryClient();
   const { setIsAddReviewModalOpen } = UseModalsContext();
   const tourId = tour?._id;
   const {
@@ -24,6 +26,7 @@ function AddReviewModal({ tour }) {
       reset();
       setIsAddReviewModalOpen(false);
       toast.success("You have successfully added your review !");
+      await queryClient.refetchQueries(["user-review"]);
     } catch (error) {
       toast.error(error.response.data.message);
     }
