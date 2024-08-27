@@ -38,7 +38,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
           product_data: {
             name: `${tour.name} Tour`,
             description: tour.summary,
-            images: [`https://www.natours.dev/img/tour/${req.params.tourId}`],
+            images: [`https://moroccan-horizons-966q/tours/${tour.imageCover}`],
           },
         },
         quantity: +quantity,
@@ -69,10 +69,15 @@ exports.getMyBooking = catchAsync(async (req, res, next) => {
   });
 });
 const createBookingCheckout = async (session) => {
-  const tour = session.client.client_reference_id;
+  const tour = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_email })).id;
-  const price = session.line_items[0].amount / 100;
-  const nPeople = session.line_items[0].quantity;
+
+  const lineItems = await stripe.checkout.sessions.listLineItems(session.id, {
+    limit: 1,
+  });
+
+  const price = lineItems[0].amount_total / 100;
+  const nPeople = lineItems[0].quantity;
   await Booking.create({ tour, user, price, nPeople });
 };
 exports.webhook = (req, res, next) => {

@@ -49,7 +49,6 @@ app.use(
           'blob:',
         ],
         frameSrc: ["'self'", 'https://js.stripe.com'],
-
         styleSrc: ["'self'", 'https:', "'unsafe-inline'"],
         imgSrc: ["'self'", 'data:'],
         fontSrc: ["'self'", 'https:', 'data:'],
