@@ -18,7 +18,6 @@ function Login() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       await login(data);
-      toast.success("You have logged in Successfully !");
       reset();
       const from = location?.state?.from?.pathname || "/";
       window.location.href = from;

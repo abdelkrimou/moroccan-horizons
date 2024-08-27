@@ -27,7 +27,14 @@ import SuccessfullBooking from "./pages/SuccessfullBooking";
 import Protect from "./components/Auth/Protect";
 import RestrictTo from "./components/Auth/RestrictTo";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000,
+      cacheTime: 10 * 60 * 1000,
+    },
+  },
+});
 
 function App() {
   return (

@@ -13,10 +13,15 @@ function MyReviews() {
     isLoading,
     data: reviews,
     error,
-  } = useQuery({
-    queryKey: ["user-review"],
-    queryFn: () => getMyReviews({ userId }),
-  });
+  } = useQuery(
+    {
+      queryKey: ["user-review", userId],
+      queryFn: () => getMyReviews({ userId }),
+    },
+    {
+      enabled: !!userId,
+    }
+  );
 
   if (isLoading) {
     return <LoadingPage />;
