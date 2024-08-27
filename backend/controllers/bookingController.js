@@ -26,14 +26,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     mode: 'payment',
-    //success_url: `${req.protocol}://${req.get('host')}/`,
-    // success_url: `${req.protocol}://${req.get('host')}/tour=${
-    //   req.params.tourId
-    // }&user=${req.user.id}&price=${tour.price}`,
-    success_url: `${req.protocol}://${req.get('host')}/my-tours`,
-
-    // cancel_url: `${req.protocol}://${req.get('host')}/${tour.nameSlug}`,
-    cancel_url: `http://127.0.0.1:5173/${tour.nameSlug}`,
+    success_url: `https://moroccan-horizons-966q.vercel.app/bookings`,
+    cancel_url: `https://moroccan-horizons-966q.vercel.app`,
     customer_email: req.user.email,
     client_reference_id: req.params.tourId,
     line_items: [
@@ -93,7 +87,7 @@ exports.webhook = (req, res, next) => {
   } catch (err) {
     return res.status(400).send(`Webhook Error : ${err.message}`);
   }
-  if (event.type === 'checkout.session.complete') {
+  if (event.type === 'checkout.session.completed') {
     createBookingCheckout(event.data.object);
   }
   res.status(200).json({
